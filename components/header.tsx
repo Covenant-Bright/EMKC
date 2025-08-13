@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect, Suspense } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -62,47 +61,7 @@ export default function Header() {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown)
   }
 
-  // Force viewport reset - add this function after the existing toggleDropdown functions
-  const resetViewport = () => {
-    // Force viewport reset by updating the meta tag
-    const viewportMeta = document.querySelector('meta[name="viewport"]')
-    if (viewportMeta) {
-      const content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-      viewportMeta.setAttribute("content", content)
-
-      // Force a reflow to apply the viewport changes
-      setTimeout(() => {
-        window.scrollTo(0, window.scrollY)
-      }, 100)
-    }
-  }
-
-  // Handle orientation changes - add this after the resetViewport function
-  const handleOrientationChange = () => {
-    // Close any open menus/search on orientation change
-    setMobileMenuOpen(false)
-    setSearchOpen(false)
-    setActiveDropdown(null)
-
-    // Reset viewport after orientation change
-    setTimeout(() => {
-      resetViewport()
-    }, 500) // Delay to allow orientation change to complete
-  }
-
-  // Add orientation change listener - add this useEffect after the existing ones
-  useEffect(() => {
-    // Listen for orientation changes
-    window.addEventListener("orientationchange", handleOrientationChange)
-    window.addEventListener("resize", handleOrientationChange)
-
-    return () => {
-      window.removeEventListener("orientationchange", handleOrientationChange)
-      window.removeEventListener("resize", handleOrientationChange)
-    }
-  }, [])
-
-  // Update the existing useEffect that handles body overflow to also reset viewport
+  // Handle body overflow when sidebar is open
   useEffect(() => {
     if (mobileMenuOpen || searchOpen) {
       document.body.style.overflow = "hidden"
@@ -110,11 +69,6 @@ export default function Header() {
     } else {
       document.body.style.overflow = ""
       document.body.style.touchAction = ""
-
-      // Reset viewport when closing sidebar/search
-      setTimeout(() => {
-        resetViewport()
-      }, 300) // Small delay to allow closing animation to complete
     }
 
     return () => {
@@ -274,7 +228,7 @@ export default function Header() {
               </div>
 
               <NavLink href="/our-schools">Our Schools</NavLink>
-              <NavLink href="/faq">FAQ</NavLink>
+              <NavLink href="/faqs">FAQs</NavLink>
 
               {/* Events Dropdown */}
               <div className="relative dropdown-container">
@@ -470,10 +424,7 @@ export default function Header() {
       {/* Mobile Sidebar - Changed to max-[1159px] */}
       <MobileSidebar
         isOpen={mobileMenuOpen}
-        onClose={() => {
-          setMobileMenuOpen(false)
-          setTimeout(resetViewport, 100)
-        }}
+        onClose={() => setMobileMenuOpen(false)}
         activeDropdown={activeDropdown}
         toggleMobileDropdown={toggleMobileDropdown}
         searchOpen={searchOpen}
@@ -691,11 +642,11 @@ function MobileSidebar({
                   Our Schools
                 </MobileNavLink>
 
-                <MobileNavLink href="/faq" onClick={onClose}>
+                <MobileNavLink href="/faqs" onClick={onClose}>
                   <span className="h-8 w-8 rounded-full bg-yellow-100 flex items-center justify-center mr-3">
                     <MessageCircle size={18} className="text-yellow-500" />
                   </span>
-                  FAQ
+                  FAQs
                 </MobileNavLink>
 
                 {/* Events Mobile Dropdown */}
@@ -773,8 +724,8 @@ function MobileSidebar({
                   Contact Us
                 </Link>
                 <span className="mx-2 text-gray-300">|</span>
-                <Link href="/faq" className="text-sm text-pink-600 hover:text-pink-800" onClick={onClose}>
-                  FAQ
+                <Link href="/faqs" className="text-sm text-pink-600 hover:text-pink-800" onClick={onClose}>
+                  FAQs
                 </Link>
               </div>
             </div>

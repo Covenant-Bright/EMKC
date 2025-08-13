@@ -112,7 +112,7 @@ export default function Footer() {
                 { text: "Our Schools", href: "/our-schools" },
                 { text: "Enrollment", href: "/enroll" },
                 { text: "Events", href: "/events" },
-                { text: "FAQ", href: "/faq" },
+                { text: "FAQs", href: "/faqs" },
               ].map((link, idx) => (
                 <li key={idx}>
                   <LinkWrapper href={link.href} className="text-gray-100 hover:text-pink-300 transition-colors flex items-center">

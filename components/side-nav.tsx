@@ -11,7 +11,7 @@ const navLinks = [
   { text: "Our Schools", href: "/our-schools" },
   { text: "Events", href: "/events" },
   { text: "Enroll", href: "/enroll" },
-  { text: "FAQ", href: "/faq" },
+  { text: "FAQ", href: "/faqs" },
 ]
 
 export default function SideNav() {

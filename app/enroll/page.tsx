@@ -272,10 +272,10 @@ export default function EnrollPage() {
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
                     required
                   >
-                    <option value="">Select Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Prefer not to say</option>
+                    <option value="" className="text-gray-800">Select Gender</option>
+                    <option value="male" className="text-gray-800">Male</option>
+                    <option value="female" className="text-gray-800">Female</option>
+                    <option value="other" className="text-gray-800">Prefer not to say</option>
                   </select>
                 </div>
               </div>
@@ -289,12 +289,12 @@ export default function EnrollPage() {
                   className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
                   required
                 >
-                  <option value="">Select a Program</option>
-                  <option value="infant">Infant (0-2 years)</option>
-                  <option value="preparatory">Preparatory (2-3 years)</option>
-                  <option value="nursery">Nursery (4-5 years)</option>
-                  <option value="primary">Primary (6-11 years)</option>
-                  <option value="secondary">Secondary (12-17 years)</option>
+                  <option value="" className="text-gray-800">Select a Program</option>
+                  <option value="infant" className="text-gray-800">Infant (0-2 years)</option>
+                  <option value="preparatory" className="text-gray-800">Preparatory (2-3 years)</option>
+                  <option value="nursery" className="text-gray-800">Nursery (4-5 years)</option>
+                  <option value="primary" className="text-gray-800">Primary (6-11 years)</option>
+                  <option value="secondary" className="text-gray-800">Secondary (12-17 years)</option>
                 </select>
               </div>
 
@@ -347,11 +347,11 @@ export default function EnrollPage() {
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
                     required
                   >
-                    <option value="">Select Relationship</option>
-                    <option value="parent">Parent</option>
-                    <option value="guardian">Legal Guardian</option>
-                    <option value="grandparent">Grandparent</option>
-                    <option value="other">Other</option>
+                    <option value="" className="text-gray-800">Select Relationship</option>
+                    <option value="parent" className="text-gray-800">Parent</option>
+                    <option value="guardian" className="text-gray-800">Legal Guardian</option>
+                    <option value="grandparent" className="text-gray-800">Grandparent</option>
+                    <option value="other" className="text-gray-800">Other</option>
                   </select>
                 </div>
                 <div>
@@ -377,7 +377,7 @@ export default function EnrollPage() {
                     name="phone"
                     type="tel"
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="+234 803-3955-391"
+                    placeholder="+234 123 4567 890"
                     required
                   />
                 </div>
@@ -387,7 +387,7 @@ export default function EnrollPage() {
                     name="altPhone"
                     type="tel"
                     className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="+234 803-3955-391"
+                    placeholder="+234 123 4567 890"
                   />
                 </div>
               </div>
@@ -505,13 +505,13 @@ export default function EnrollPage() {
                   name="source"
                   className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
                 >
-                  <option value="">Please select</option>
-                  <option value="website">School Website</option>
-                  <option value="social">Social Media</option>
-                  <option value="friend">Friend/Family Referral</option>
-                  <option value="event">School Event</option>
-                  <option value="search">Search Engine</option>
-                  <option value="other">Other</option>
+                  <option value="" className="text-gray-800">Please select</option>
+                  <option value="website" className="text-gray-800">School Website</option>
+                  <option value="social" className="text-gray-800">Social Media</option>
+                  <option value="friend" className="text-gray-800">Friend/Family Referral</option>
+                  <option value="event" className="text-gray-800">School Event</option>
+                  <option value="search" className="text-gray-800">Search Engine</option>
+                  <option value="other" className="text-gray-800">Other</option>
                 </select>
               </div>
 

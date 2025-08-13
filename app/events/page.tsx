@@ -52,28 +52,22 @@ const featuredEvents = [
 
 const upcomingEvents = [
   {
-    title: "Parents' Workshop: Child Development",
-    date: "May 25, 2025",
-    location: "Downtown Campus",
-    description: "Learn about key developmental milestones and how to support your child's growth.",
+    title: "School Resumption",
+    date: "September 15, 2025",
+    location: "All Branches",
+    description: "All students are to resume on the resumption date and purchase the needed books and materials for the coming session.",
   },
   {
-    title: "Science Fair",
-    date: "June 2, 2025",
-    location: "Main Campus",
-    description: "Students showcase their science projects and experiments to the community.",
+    title: "Summer Coaching",
+    date: "August 11, 2025",
+    location: "School Premises",
+    description: "Register early for our popular summer coaching.",
   },
   {
-    title: "Summer Camp Registration Opens",
-    date: "June 10, 2025",
-    location: "Online",
-    description: "Register early for our popular summer camps featuring sports, arts, and STEM activities.",
-  },
-  {
-    title: "Annual Charity Fun Run",
-    date: "September 12, 2025",
-    location: "City Park",
-    description: "Join our community for a fun run to raise funds for children's education initiatives.",
+    title: "Parent Teachers Meeting",
+    date: "September, 2025",
+    location: "Each School Branch",
+    description: "To enlighten parents about the school's transition to a digital portal for convenient and secure school fee payments.",
   },
 ]
 

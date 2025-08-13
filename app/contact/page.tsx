@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Users, Calendar, CheckCircle } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Send, MessageCircle, CheckCircle } from "lucide-react"
 import PageHeader from "@/components/page-header"
 import Header from "@/components/header" // Import Header component
 
@@ -129,9 +129,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-2">Call Us</h3>
                     <p className="text-gray-600">
-                       +234 803 395 5391
+                      +234 803 395 5391
                       <br />
-                       +234 905 856 1722
+                      +234 905 856 1722
                     </p>
                   </div>
                 </div>
@@ -179,16 +179,7 @@ export default function ContactPage() {
             </div>
 
             {/* Quick Actions */}
-            <div className="grid grid-cols-2 gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center justify-center p-4 bg-gradient-to-r from-pink-500 to-pink-400 text-white rounded-lg font-medium shadow-lg"
-              >
-                <Calendar size={20} className="mr-2" />
-                Schedule Visit
-              </motion.button>
-            </div>
+            <div className="grid grid-cols-2 gap-4"></div>
           </motion.div>
 
           {/* Contact Form */}
@@ -211,7 +202,9 @@ export default function ContactPage() {
               >
                 <CheckCircle size={64} className="text-green-500 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-gray-800 mb-2">Message Sent!</h3>
-                <p className="text-gray-600">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                <p className="text-gray-600">
+                  Thank you for contacting us. We've received your message and will respond within 24 hours.
+                </p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -260,7 +253,7 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
-                      placeholder="+234 (0) 123 456 7890"
+                      placeholder="+234 123 456 7890"
                     />
                   </div>
                   <div>
@@ -316,11 +309,18 @@ export default function ContactPage() {
                   />
                 </div>
 
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <p className="text-sm text-blue-800">
+                    <strong>Privacy Notice:</strong> Your information will only be used to respond to your inquiry. We
+                    do not share your details with third parties or add you to mailing lists without explicit consent.
+                  </p>
+                </div>
+
                 {error && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-red-600 text-sm text-center"
+                    className="text-red-600 text-sm text-center bg-red-50 border border-red-200 rounded-lg p-3"
                   >
                     {error}
                   </motion.div>
@@ -358,7 +358,6 @@ export default function ContactPage() {
           </motion.div>
         </div>
 
-       
         {/* FAQ Section */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
