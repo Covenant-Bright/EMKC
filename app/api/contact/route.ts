@@ -118,11 +118,80 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Failed to send message. Please try again later." }, { status: 500 })
     }
 
-    // Users will only receive emails they explicitly request
+    const userConfirmationHtml = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <title>Message Confirmation - EMKC</title>
+      </head>
+      <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+        <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;">
+            Message Received - Thank You!
+          </h2>
+          
+          <p>Dear ${name},</p>
+          
+          <p>Thank you for contacting Excellent Miracle Group of Schools. We have successfully received your message and will respond within 24 hours.</p>
+          
+          <div style="background: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
+            <h3 style="color: #2c3e50; margin-top: 0;">Your Message Details:</h3>
+            <p><strong>Subject:</strong> ${subject}</p>
+            <p><strong>Inquiry Type:</strong> ${inquiryType || "General"}</p>
+            ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
+            <p><strong>Message:</strong></p>
+            <div style="background: white; padding: 15px; border-left: 4px solid #3498db; margin-top: 10px;">
+              ${message.replace(/\n/g, "<br>")}
+            </div>
+          </div>
+          
+          <p>If you have any urgent inquiries, please call us at <strong>+234 803 395 5391</strong>.</p>
+          
+          <p>Best regards,<br>
+          <strong>Excellent Miracle Group of Schools</strong><br>
+          Admissions Team</p>
+          
+          <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
+          <p style="color: #7f8c8d; font-size: 12px;">
+            This is an automated confirmation email. Please do not reply to this email.
+            <br>Visit us at: <a href="https://emkc.sch.ng" style="color: #3498db;">emkc.sch.ng</a>
+          </p>
+        </div>
+      </body>
+      </html>
+    `
+
+    const userResponse = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "api-key": apiKey,
+      },
+      body: JSON.stringify({
+        sender: { email: senderEmail, name: senderName },
+        to: [{ email, name }],
+        subject: `Message Confirmation - EMKC`,
+        htmlContent: userConfirmationHtml,
+        headers: {
+          "X-Mailer": "EMKC Contact Form",
+          "X-Priority": "3",
+          "List-Unsubscribe": "<mailto:unsubscribe@emkc.sch.ng>",
+        },
+      }),
+    })
+
+    if (!userResponse.ok) {
+      const error = await userResponse.text()
+      console.error(`Brevo error (user confirmation): ${userResponse.status} - ${error}`)
+      // Don't fail the entire request if user confirmation fails
+      console.log("Team email sent successfully, but user confirmation failed")
+    }
 
     return NextResponse.json(
       {
-        message: "Message sent successfully! We'll get back to you within 24 hours.",
+        message:
+          "Message sent successfully! We'll get back to you within 24 hours. A confirmation has been sent to your email.",
       },
       { status: 200 },
     )
