@@ -8,6 +8,7 @@ import PageTransition from "@/components/page-transition"
 import ScrollRestoration from "@/components/scroll-restoration"
 import { Suspense } from "react"
 import GlobalLoader from "@/components/global-loader"
+import { Analytics } from "@vercel/analytics/react"
 
 // Initialize the Fredoka font with the weights we need
 const fredoka = Fredoka({
@@ -19,8 +20,7 @@ const fredoka = Fredoka({
 
 export const metadata: Metadata = {
   title: "Excellent Miracle Kiddies College",
-  description:
-    "Where Fun Happens! Educating Your Children at Excellent Miracle Kiddies College",
+  description: "Fostering Academic Excellence and Character Development.",
   icons: {
     icon: [
       {
@@ -86,6 +86,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </AnimationProvider>
+        <Analytics />
       </body>
     </html>
   )
