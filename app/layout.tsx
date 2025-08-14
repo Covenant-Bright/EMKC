@@ -9,6 +9,7 @@ import ScrollRestoration from "@/components/scroll-restoration"
 import { Suspense } from "react"
 import GlobalLoader from "@/components/global-loader"
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // Initialize the Fredoka font with the weights we need
 const fredoka = Fredoka({
@@ -87,6 +88,7 @@ export default function RootLayout({
           </div>
         </AnimationProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
