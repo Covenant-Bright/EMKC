@@ -323,14 +323,14 @@ export default function Header() {
                       style={{ zIndex: 9999 }}
                     >
                       <Link
-                        href="/portal/student"
+                        href="https://portal.emkc.sch.ng/student-login"
                         className="flex px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-500 transition-colors"
                         onClick={() => setActiveDropdown(null)}
                       >
                         Student Portal
                       </Link>
                       <Link
-                        href="/portal/teacher"
+                        href="https://portal.emkc.sch.ng/teacher-login"
                         className="flex px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-500 transition-colors"
                         onClick={() => setActiveDropdown(null)}
                       >
@@ -624,10 +624,10 @@ function MobileSidebar({
                   >
                     {activeDropdown === "portal-mobile" && (
                       <>
-                        <MobileNavSubLink href="/portal/student" onClick={onClose}>
+                        <MobileNavSubLink href="https://portal.emkc.sch.ng/student-login" onClick={onClose}>
                           Student Portal
                         </MobileNavSubLink>
-                        <MobileNavSubLink href="/portal/teacher" onClick={onClose}>
+                        <MobileNavSubLink href="https://portal.emkc.sch.ng/teacher-login" onClick={onClose}>
                           Teacher Portal
                         </MobileNavSubLink>
                       </>
