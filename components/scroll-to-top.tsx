@@ -10,23 +10,12 @@ export default function ScrollToTop() {
   // Show button when page is scrolled down
   useEffect(() => {
     const toggleVisibility = () => {
-<<<<<<< HEAD
       const nextVisible = window.pageYOffset > 300
       setIsVisible((prev) => (prev === nextVisible ? prev : nextVisible))
     }
 
     toggleVisibility()
     window.addEventListener("scroll", toggleVisibility, { passive: true })
-=======
-      if (window.pageYOffset > 300) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
-    }
-
-    window.addEventListener("scroll", toggleVisibility)
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
     return () => window.removeEventListener("scroll", toggleVisibility)
   }, [])
 

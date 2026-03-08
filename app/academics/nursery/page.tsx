@@ -281,11 +281,7 @@ export default function NurseryPage() {
                 </div>
               </div>
               <div className="relative h-64 md:h-auto">
-<<<<<<< HEAD
                 <Image src="/_MG_4258.webp" alt="Happy nursery students" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
-=======
-                <Image src="/_MG_4258.webp" alt="Happy nursery students" fill className="object-cover" />
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
               </div>
             </div>
           </div>

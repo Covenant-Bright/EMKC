@@ -172,11 +172,7 @@ export default function OurSchoolsPage() {
                 </a>
               </div>
               <div className="relative h-64 lg:h-auto">
-<<<<<<< HEAD
                 <Image src="/_MG_4004.webp" alt="Contact us" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
-=======
-                <Image src="/_MG_4004.webp" alt="Contact us" fill className="object-cover" />
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
               </div>
             </div>
           </div>
@@ -186,8 +182,4 @@ export default function OurSchoolsPage() {
       </section>
     </main>
   )
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e

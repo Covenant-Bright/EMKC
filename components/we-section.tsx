@@ -64,11 +64,7 @@ useEffect(() => {
 }, [])
 
 return (
-<<<<<<< HEAD
   <section className="deferred-render relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-white to-sky-50">
-=======
-  <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-b from-white to-sky-50">
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
     <SectionDivider position="top" fillColor="white" />
 
     {/* Use a max-width container and center it */}
@@ -141,10 +137,7 @@ return (
                           alt={image.alt}
                           fill
                           className="object-cover"
-<<<<<<< HEAD
                           sizes="(min-width: 1024px) 42vw, 92vw"
-=======
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                         />
                       </motion.div>
                     ),

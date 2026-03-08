@@ -48,11 +48,7 @@ export default function NewsSection() {
   }, [selectedNews])
 
   return (
-<<<<<<< HEAD
     <section className="deferred-render relative py-16 md:py-24 overflow-hidden bg-[#f5f1e6]">
-=======
-    <section className="relative py-16 md:py-24 overflow-hidden bg-[#f5f1e6]">
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
       <SectionDivider position="top" fillColor="#fef3c7" />
 
       <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
@@ -125,10 +121,7 @@ export default function NewsSection() {
                     alt={selectedNews.title}
                     fill
                     className="object-cover"
-<<<<<<< HEAD
                     sizes="(min-width: 1024px) 896px, 100vw"
-=======
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                   />
                 </div>
               )}
@@ -178,10 +171,7 @@ function NewsCard({
             width={400}
             height={300}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-<<<<<<< HEAD
             sizes="(min-width: 768px) 33vw, 100vw"
-=======
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
           />
           <span
             className={`absolute top-4 left-4 ${item.tagColor} text-white text-xs font-bold py-1 px-3 rounded-full`}
@@ -218,8 +208,4 @@ function NewsCard({
       </div>
     </div>
   )
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e

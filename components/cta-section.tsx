@@ -59,10 +59,7 @@ export default function CTASection() {
                     fill
                     className="object-cover"
                     priority
-<<<<<<< HEAD
                     sizes="(min-width: 1024px) 50vw, 100vw"
-=======
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                   />
                 </ParallaxElement>
               </AnimatedSection>

@@ -210,10 +210,7 @@ export default function SearchBar({ onClose, isMobile = false }: SearchBarProps)
                                     alt={result.title}
                                     fill
                                     className="object-cover"
-<<<<<<< HEAD
                                     sizes="48px"
-=======
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                                   />
                                 </div>
                               </div>

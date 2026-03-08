@@ -8,74 +8,41 @@ import Image from "next/image"
 import SectionDivider from "@/components/section-divider"
 import { Check } from "lucide-react"
 import { motion } from "framer-motion"
-<<<<<<< HEAD
-=======
-import { useState } from "react"
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
 
 const enrollmentSteps = [
   {
     number: "01",
-<<<<<<< HEAD
     title: "Create Account",
     description:
       "Open the EMKC portal registration page and create your parent account with the correct contact details.",
-=======
-    title: "Inquire",
-    description:
-      "Fill out our inquiry form or contact us to receive detailed information about our programs and availability.",
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
     icon: "/icons/inquire.webp",
   },
   {
     number: "02",
-<<<<<<< HEAD
     title: "Complete Registration",
     description:
       "Fill in your child's biodata, class preference, and all required parent or guardian information on the portal.",
-=======
-    title: "Tour",
-    description:
-      "Schedule a school tour to visit our facilities, meet our staff, and get a feel for our educational environment.",
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
     icon: "/icons/tour.webp",
   },
   {
     number: "03",
-<<<<<<< HEAD
     title: "Upload Requirements",
     description:
       "Submit the requested documents and supporting details so our admissions team can review the application properly.",
-=======
-    title: "Apply",
-    description: "Complete the application form, providing all necessary information about your child and family.",
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
     icon: "/icons/apply.webp",
   },
   {
     number: "04",
-<<<<<<< HEAD
     title: "Admissions Review",
     description:
       "Our team reviews each registration and contacts you if any clarification, screening, or next-step guidance is needed.",
-=======
-    title: "Assessment",
-    description:
-      "For some age groups, we conduct a friendly assessment to understand your child's developmental needs.",
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
     icon: "/icons/assessment.webp",
   },
   {
     number: "05",
-<<<<<<< HEAD
     title: "Confirmation",
     description:
       "Once approved, you will receive confirmation and directions for final onboarding, payment, and resumption.",
-=======
-    title: "Enrollment",
-    description:
-      "Upon acceptance, complete the enrollment process by signing agreements and paying the registration fee.",
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
     icon: "/icons/enrollment.webp",
   },
 ]
@@ -92,81 +59,6 @@ const benefits = [
 ]
 
 export default function EnrollPage() {
-<<<<<<< HEAD
-=======
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      // Get form data
-      const form = e.target;
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-      
-      // Format WhatsApp message
-      let message = `*NEW APPLICATION SUBMISSION*\n\n`;
-      message += `*Child's Name:* ${data.childFirstName} ${data.childLastName}\n`;
-      message += `*Date of Birth:* ${data.childDOB}\n`;
-      message += `*Gender:* ${data.childGender}\n`;
-      message += `*Program:* ${data.program}\n`;
-      message += `*Start Date:* ${data.startDate}\n\n`;
-      
-      message += `*Parent/Guardian:* ${data.parentFirstName} ${data.parentLastName}\n`;
-      message += `*Relationship:* ${data.relationship}\n`;
-      message += `*Email:* ${data.email}\n`;
-      message += `*Phone:* ${data.phone}\n`;
-      message += `*Alt Phone:* ${data.altPhone || 'N/A'}\n\n`;
-      
-      message += `*Address:* ${data.streetAddress}, ${data.city}, ${data.state} ${data.postalCode}\n\n`;
-      
-      if (data.emergencyContactName) {
-        message += `*Emergency Contact:* ${data.emergencyContactName} (${data.emergencyContactRelationship})\n`;
-        message += `*Emergency Phone:* ${data.emergencyContactPhone || 'N/A'}\n\n`;
-      }
-      
-      if (data.prevSchoolName) {
-        message += `*Previous School:* ${data.prevSchoolName}\n`;
-        message += `*Grade/Level:* ${data.prevGrade || 'N/A'}\n\n`;
-      }
-      
-      if (data.allergies || data.medicalConditions || data.medicalDetails) {
-        message += `*Medical Information:*\n`;
-        if (data.allergies) message += `- Allergies: Yes\n`;
-        if (data.medicalConditions) message += `- Medical Conditions: Yes\n`;
-        message += `${data.medicalDetails || 'No details provided'}\n\n`;
-      }
-      
-      message += `*How They Heard About Us:* ${data.source || 'Not specified'}\n\n`;
-      message += `*Additional Information:*\n${data.additionalInfo || 'None'}`;
-
-      // Get WhatsApp number from environment variable
-      const whatsappNumber = process.env.NEXT_PUBLIC_FOOTER_WHATSAPP_NUMBER;
-      if (!whatsappNumber) {
-        throw new Error('WhatsApp number is not configured');
-      }
-
-      // Encode message for URL
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-      // Open WhatsApp
-      window.open(whatsappUrl, '_blank');
-      
-      // Optional: Reset form after submission
-      form.reset();
-      
-    } catch (error) {
-      console.error('Submission error:', error);
-      alert('There was an error submitting your application. Please try again or contact the school directly.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
   return (
     <main className="min-h-screen relative">
       <ParticlesBackground />
@@ -257,7 +149,6 @@ export default function EnrollPage() {
             transition={{ duration: 0.5 }}
             className="rounded-3xl overflow-hidden shadow-md bg-gradient-to-br from-pink-500 to-pink-600 text-white p-8 md:p-12"
           >
-<<<<<<< HEAD
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Start Your Application</h2>
             <p className="mx-auto mb-8 max-w-2xl text-center text-pink-50">
               All new registrations are now completed through the EMKC portal. Use the button below to begin your
@@ -279,355 +170,12 @@ export default function EnrollPage() {
               </a>
               <p className="text-xs uppercase tracking-[0.18em] text-pink-100/90">Secure portal registration</p>
             </div>
-=======
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Start Your Application</h2>
-
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Child's First Name <span className="text-pink-200">*</span>
-                  </label>
-                  <input
-                    name="childFirstName"
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="First Name"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Child's Last Name <span className="text-pink-200">*</span>
-                  </label>
-                  <input
-                    name="childLastName"
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Last Name"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Child's Date of Birth <span className="text-pink-200">*</span>
-                  </label>
-                  <input
-                    name="childDOB"
-                    type="date"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Gender <span className="text-pink-200">*</span>
-                  </label>
-                  <select
-                    name="childGender"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
-                    required
-                  >
-                    <option value="" className="text-gray-800">Select Gender</option>
-                    <option value="male" className="text-gray-800">Male</option>
-                    <option value="female" className="text-gray-800">Female</option>
-                    <option value="other" className="text-gray-800">Prefer not to say</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Program of Interest <span className="text-pink-200">*</span>
-                </label>
-                <select
-                  name="program"
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
-                  required
-                >
-                  <option value="" className="text-gray-800">Select a Program</option>
-                  <option value="infant" className="text-gray-800">Infant (0-2 years)</option>
-                  <option value="preparatory" className="text-gray-800">Preparatory (2-3 years)</option>
-                  <option value="nursery" className="text-gray-800">Nursery (4-5 years)</option>
-                  <option value="primary" className="text-gray-800">Primary (6-11 years)</option>
-                  <option value="secondary" className="text-gray-800">Secondary (12-17 years)</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Preferred Start Date <span className="text-pink-200">*</span>
-                </label>
-                <input
-                  name="startDate"
-                  type="date"
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                  required
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Parent/Guardian First Name <span className="text-pink-200">*</span>
-                  </label>
-                  <input
-                    name="parentFirstName"
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="First Name"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Parent/Guardian Last Name <span className="text-pink-200">*</span>
-                  </label>
-                  <input
-                    name="parentLastName"
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Last Name"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Relationship to Child <span className="text-pink-200">*</span>
-                  </label>
-                  <select
-                    name="relationship"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
-                    required
-                  >
-                    <option value="" className="text-gray-800">Select Relationship</option>
-                    <option value="parent" className="text-gray-800">Parent</option>
-                    <option value="guardian" className="text-gray-800">Legal Guardian</option>
-                    <option value="grandparent" className="text-gray-800">Grandparent</option>
-                    <option value="other" className="text-gray-800">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Email Address <span className="text-pink-200">*</span>
-                  </label>
-                  <input
-                    name="email"
-                    type="email"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="your@email.com"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Phone Number <span className="text-pink-200">*</span>
-                  </label>
-                  <input
-                    name="phone"
-                    type="tel"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="+234 123 4567 890"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Alternative Phone Number</label>
-                  <input
-                    name="altPhone"
-                    type="tel"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="+234 123 4567 890"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Home Address <span className="text-pink-200">*</span>
-                </label>
-                <input
-                  name="streetAddress"
-                  type="text"
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 mb-3"
-                  placeholder="Street Address"
-                  required
-                />
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  <input
-                    name="city"
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="City"
-                    required
-                  />
-                  <input
-                    name="state"
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="State/Province"
-                    required
-                  />
-                  <input
-                    name="postalCode"
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Postal Code"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2">Emergency Contact Information</label>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-                  <input
-                    name="emergencyContactName"
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Contact Name"
-                  />
-                  <input
-                    name="emergencyContactRelationship"
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Relationship to Child"
-                  />
-                </div>
-                <input
-                  name="emergencyContactPhone"
-                  type="tel"
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                  placeholder="Emergency Contact Phone"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2">Previous School Information (if applicable)</label>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <input
-                    name="prevSchoolName"
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="School Name"
-                  />
-                  <input
-                    name="prevGrade"
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
-                    placeholder="Grade/Year Level"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2">Medical Information</label>
-                <div className="mb-3">
-                  <label className="flex items-center text-sm">
-                    <input
-                      name="allergies"
-                      type="checkbox"
-                      className="mr-2 rounded bg-white/10 border-white/20 text-pink-300 focus:ring-pink-300"
-                    />
-                    Does your child have any allergies?
-                  </label>
-                </div>
-                <div className="mb-3">
-                  <label className="flex items-center text-sm">
-                    <input
-                      name="medicalConditions"
-                      type="checkbox"
-                      className="mr-2 rounded bg-white/10 border-white/20 text-pink-300 focus:ring-pink-300"
-                    />
-                    Does your child have any medical conditions we should be aware of?
-                  </label>
-                </div>
-                <textarea
-                  name="medicalDetails"
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 h-24"
-                  placeholder="Please provide details of any allergies, medical conditions, or special needs"
-                ></textarea>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2">How did you hear about us?</label>
-                <select 
-                  name="source"
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-white/50"
-                >
-                  <option value="" className="text-gray-800">Please select</option>
-                  <option value="website" className="text-gray-800">School Website</option>
-                  <option value="social" className="text-gray-800">Social Media</option>
-                  <option value="friend" className="text-gray-800">Friend/Family Referral</option>
-                  <option value="event" className="text-gray-800">School Event</option>
-                  <option value="search" className="text-gray-800">Search Engine</option>
-                  <option value="other" className="text-gray-800">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2">Additional Information</label>
-                <textarea
-                  name="additionalInfo"
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 h-24"
-                  placeholder="Please share any specific questions or information that may help us serve you better."
-                ></textarea>
-              </div>
-
-              <div className="pt-2">
-                <label className="flex items-center text-sm">
-                  <input
-                    type="checkbox"
-                    className="mr-2 rounded bg-white/10 border-white/20 text-pink-300 focus:ring-pink-300"
-                    required
-                  />
-                  <span>
-                    I agree to the{" "}
-                    <a href="/terms" className="underline hover:text-white/80">
-                      terms and conditions
-                    </a>{" "}
-                    and{" "}
-                    <a href="/privacy" className="underline hover:text-white/80">
-                      privacy policy
-                    </a>{" "}
-                    <span className="text-pink-200">*</span>
-                  </span>
-                </label>
-              </div>
-
-              <div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`w-full py-3 px-8 bg-white text-pink-600 rounded-lg font-medium shadow-md hover:shadow-lg transition-all ${
-                    isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-gray-50'
-                  }`}
-                >
-                  {isSubmitting ? 'Sending to WhatsApp...' : 'Submit Application'}
-                </button>
-              </div>
-            </form>
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
           </motion.div>
 
           <div className="mt-8 text-center">
             <p className="text-gray-600">
-<<<<<<< HEAD
               If you need help with portal registration or have questions about the process, please contact our
               admissions office at <span className="font-medium text-pink-600">+234 803-3955-391 </span>
-=======
-              If you prefer to enroll in person or have questions about the process, please contact our admissions
-              office at <span className="font-medium text-pink-600">+234 803-3955-391 </span>
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
               or email <span className="font-medium text-pink-600">info@emkc.sch.ng</span>
             </p>
           </div>
@@ -635,8 +183,4 @@ export default function EnrollPage() {
       </ContentSection>
     </main>
   )
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e

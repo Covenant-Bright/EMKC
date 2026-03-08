@@ -325,10 +325,7 @@ function ActionCard({
           alt={title}
           fill
           className="object-cover"
-<<<<<<< HEAD
           sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
-=======
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
           <h3 className="text-white text-2xl font-bold p-6">{title}</h3>
