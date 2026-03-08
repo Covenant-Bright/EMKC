@@ -30,17 +30,11 @@ export default function Header() {
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-<<<<<<< HEAD
       const nextIsScrolled = window.scrollY > 10
       setIsScrolled((prev) => (prev === nextIsScrolled ? prev : nextIsScrolled))
     }
     handleScroll()
     window.addEventListener("scroll", handleScroll, { passive: true })
-=======
-      setIsScrolled(window.scrollY > 10)
-    }
-    window.addEventListener("scroll", handleScroll)
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -331,22 +325,14 @@ export default function Header() {
                       style={{ zIndex: 9999 }}
                     >
                       <Link
-<<<<<<< HEAD
                         href="https://portal.emkc.sch.ng/student/login"
-=======
-                        href="https://portal.emkc.sch.ng/student-login"
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                         className="flex px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-500 transition-colors"
                         onClick={() => setActiveDropdown(null)}
                       >
                         Student Portal
                       </Link>
                       <Link
-<<<<<<< HEAD
                         href="https://portal.emkc.sch.ng/teacher/login"
-=======
-                        href="https://portal.emkc.sch.ng/teacher-login"
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                         className="flex px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-500 transition-colors"
                         onClick={() => setActiveDropdown(null)}
                       >
@@ -640,17 +626,10 @@ function MobileSidebar({
                   >
                     {activeDropdown === "portal-mobile" && (
                       <>
-<<<<<<< HEAD
                         <MobileNavSubLink href="https://portal.emkc.sch.ng/student/login" onClick={onClose}>
                           Student Portal
                         </MobileNavSubLink>
                         <MobileNavSubLink href="https://portal.emkc.sch.ng/teacher/login" onClick={onClose}>
-=======
-                        <MobileNavSubLink href="https://portal.emkc.sch.ng/student-login" onClick={onClose}>
-                          Student Portal
-                        </MobileNavSubLink>
-                        <MobileNavSubLink href="https://portal.emkc.sch.ng/teacher-login" onClick={onClose}>
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                           Teacher Portal
                         </MobileNavSubLink>
                       </>
@@ -823,8 +802,4 @@ function SocialButton({ href, icon }: { href: string; icon: React.ReactNode }) {
       {icon}
     </a>
   )
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
