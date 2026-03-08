@@ -70,7 +70,11 @@ export default function CulturalDayPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl shadow-md overflow-hidden">
               <div className="h-48 relative">
+<<<<<<< HEAD
                 <Image src="/cultural/_MG_0397.webp" alt="Yoruba Cultural performances" fill className="object-cover" sizes="(min-width: 768px) 33vw, 100vw" />
+=======
+                <Image src="/cultural/_MG_0397.webp" alt="Yoruba Cultural performances" fill className="object-cover" />
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-[#0d3b49] mb-2">Yoruba Cultural performances</h3>
@@ -82,7 +86,11 @@ export default function CulturalDayPage() {
 
             <div className="bg-white rounded-2xl shadow-md overflow-hidden">
               <div className="h-48 relative">
+<<<<<<< HEAD
                 <Image src="/cultural/_MG_0025.webp" alt="Igbo Cultural performances" fill className="object-cover" sizes="(min-width: 768px) 33vw, 100vw" />
+=======
+                <Image src="/cultural/_MG_0025.webp" alt="Igbo Cultural performances" fill className="object-cover" />
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-[#0d3b49] mb-2">Igbo Cultural performances</h3>
@@ -94,7 +102,11 @@ export default function CulturalDayPage() {
 
             <div className="bg-white rounded-2xl shadow-md overflow-hidden">
               <div className="h-48 relative">
+<<<<<<< HEAD
                 <Image src="/cultural/_MG_0376.webp" alt="Hausa Cultural performances" fill className="object-cover" sizes="(min-width: 768px) 33vw, 100vw" />
+=======
+                <Image src="/cultural/_MG_0376.webp" alt="Hausa Cultural performances" fill className="object-cover" />
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-[#0d3b49] mb-2">Hausa Cultural performances</h3>
@@ -209,4 +221,8 @@ export default function CulturalDayPage() {
       </ContentSection>
     </main>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e

@@ -124,13 +124,20 @@ body.menu-open {
 /* Scroll lock when loader is active */
 body.app-loading {
   overflow: hidden !important;
+<<<<<<< HEAD
   overscroll-behavior: none !important;
   touch-action: none !important;
+=======
+  height: 100vh !important;
+  position: fixed !important;
+  width: 100% !important;
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
 }
 
 /* Enhanced scroll prevention during loading */
 html.loading-active {
   overflow: hidden !important;
+<<<<<<< HEAD
   overscroll-behavior: none !important;
 }
 
@@ -139,6 +146,13 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+=======
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
 }
 
 /* Removed problematic lazy loading opacity rules that were hiding images */
@@ -148,6 +162,7 @@ img {
   height: auto;
 }
 
+<<<<<<< HEAD
 /* Use native lazy rendering for large content blocks below the fold. */
 .deferred-render {
   content-visibility: auto;
@@ -160,6 +175,8 @@ img {
   backface-visibility: hidden;
 }
 
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
@@ -265,6 +282,7 @@ img {
     font-size: 3rem;
   }
 }
+<<<<<<< HEAD
 
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -280,3 +298,5 @@ img {
     scroll-behavior: auto !important;
   }
 }
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e

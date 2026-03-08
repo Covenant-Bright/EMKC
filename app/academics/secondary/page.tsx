@@ -193,7 +193,11 @@ export default function SecondaryPage() {
               </ul>
             </div>
             <div className="relative h-64 lg:h-auto">
+<<<<<<< HEAD
               <Image src="/_MG_1992.webp" alt="University preparation" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+=======
+              <Image src="/_MG_1992.webp" alt="University preparation" fill className="object-cover" />
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
             </div>
           </div>
         </div>
@@ -384,7 +388,10 @@ function ProgramCard({
           alt={title}
           fill
           className="object-cover"
+<<<<<<< HEAD
           sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
         />
         <div className={`absolute top-0 left-0 w-full h-full opacity-10 ${color}`}></div>
         <div className={`absolute top-4 left-4 p-3 rounded-full ${color} text-white`}>{icon}</div>

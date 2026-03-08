@@ -96,7 +96,11 @@ export default function AboutPage() {
         </div>
       </ContentSection>
 
+<<<<<<< HEAD
       <section className="deferred-render relative py-16 bg-gradient-to-b from-white to-sky-50">
+=======
+      <section className="relative py-16 bg-gradient-to-b from-white to-sky-50">
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
         <SectionDivider position="top" fillColor="white" />
 
         <div className="max-w-6xl mx-auto px-4 md:px-8">
@@ -114,7 +118,10 @@ export default function AboutPage() {
                       alt={card.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
+<<<<<<< HEAD
                       sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                     />
                   </div>
                   <div className="p-6">
@@ -140,7 +147,10 @@ export default function AboutPage() {
                       alt={card.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
+<<<<<<< HEAD
                       sizes="(min-width: 768px) 45vw, 100vw"
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                     />
                   </div>
                   <div className="p-6">

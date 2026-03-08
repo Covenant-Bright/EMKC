@@ -236,7 +236,10 @@ function FacilityCard({
           alt={title}
           fill
           className="object-cover"
+<<<<<<< HEAD
           sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/20"></div>
         <div className={`absolute top-4 left-4 p-3 rounded-full ${color} text-white`}>{icon}</div>

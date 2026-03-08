@@ -17,7 +17,11 @@ export default function ContentSection({
   id,
 }: ContentSectionProps) {
   return (
+<<<<<<< HEAD
     <section id={id} className={cn("deferred-render py-12 md:py-16 overflow-hidden", bgColor, className)}>
+=======
+    <section id={id} className={cn("py-12 md:py-16 overflow-hidden", bgColor, className)}>
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
       <div className={cn("mx-auto px-4 md:px-8", narrowWidth ? "max-w-4xl" : "max-w-6xl")}>{children}</div>
     </section>
   )

@@ -267,7 +267,10 @@ function EventCard({ event }: { event: any }) {
           alt={event.title}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-110"
+<<<<<<< HEAD
           sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, 100vw"
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/60 to-transparent"></div>
         <div className="absolute bottom-4 left-4">
@@ -320,4 +323,8 @@ function FeaturedEvent({
       </Link>
     </div>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e

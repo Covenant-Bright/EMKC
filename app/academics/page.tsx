@@ -137,7 +137,10 @@ export default function AcademicsPage() {
                       alt={program.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
+<<<<<<< HEAD
                       sizes="(min-width: 768px) 33vw, 100vw"
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                     />
                     <div
                       className={`absolute top-4 left-4 px-4 py-1 rounded-full ${program.color} text-gray-800 font-medium text-sm`}

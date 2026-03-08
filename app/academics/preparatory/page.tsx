@@ -141,7 +141,10 @@ export default function PreparatoryPage() {
                   alt="Circle time in preparatory class"
                   fill
                   className="object-cover"
+<<<<<<< HEAD
                   sizes="(min-width: 768px) 25vw, 50vw"
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                 />
               </div>
               <div className="aspect-square relative">
@@ -150,7 +153,10 @@ export default function PreparatoryPage() {
                   alt="Art activities in preparatory class"
                   fill
                   className="object-cover"
+<<<<<<< HEAD
                   sizes="(min-width: 768px) 25vw, 50vw"
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                 />
               </div>
               <div className="aspect-square relative">
@@ -159,7 +165,10 @@ export default function PreparatoryPage() {
                   alt="Snack time in preparatory class"
                   fill
                   className="object-cover"
+<<<<<<< HEAD
                   sizes="(min-width: 768px) 25vw, 50vw"
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                 />
               </div>
               <div className="aspect-square relative">
@@ -168,7 +177,10 @@ export default function PreparatoryPage() {
                   alt="Outdoor play in preparatory class"
                   fill
                   className="object-cover"
+<<<<<<< HEAD
                   sizes="(min-width: 768px) 25vw, 50vw"
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                 />
               </div>
             </div>

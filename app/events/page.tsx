@@ -43,7 +43,11 @@ const featuredEvents = [
     date: "August 5, 2025",
     location: "All Branches",
     time: "10:00 AM - 2:00 PM",
+<<<<<<< HEAD
     description: "A celebration of the successful completion of another academic session.",
+=======
+    description: "Children learn about different professions through interactive presentations.",
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
     image: "/IMG_3826.webp",
     link: "/events/special-events",
     color: "bg-teal-500",
@@ -102,7 +106,10 @@ export default function EventsPage() {
                     alt={event.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
+<<<<<<< HEAD
                     sizes="(min-width: 768px) 33vw, 100vw"
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                   />
                   <div
                     className={`absolute top-4 left-4 px-4 py-1 rounded-full ${event.color} text-white font-medium text-sm`}
@@ -142,7 +149,11 @@ export default function EventsPage() {
         </div>
       </ContentSection>
 
+<<<<<<< HEAD
       <section className="deferred-render relative py-16 bg-gradient-to-b from-white to-purple-50">
+=======
+      <section className="relative py-16 bg-gradient-to-b from-white to-purple-50">
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
         <SectionDivider position="top" fillColor="white" />
 
         <div className="max-w-6xl mx-auto px-4 md:px-8">

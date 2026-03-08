@@ -139,6 +139,7 @@ export default function CareerDayPage() {
           <div className="order-2 lg:order-1">
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-square relative rounded-2xl overflow-hidden">
+<<<<<<< HEAD
                 <Image src="/_MG_3870.webp" alt="Student trying medical equipment" fill className="object-cover" sizes="(min-width: 768px) 25vw, 50vw" />
               </div>
               <div className="aspect-square relative rounded-2xl overflow-hidden">
@@ -149,6 +150,18 @@ export default function CareerDayPage() {
               </div>
               <div className="aspect-square relative rounded-2xl overflow-hidden">
                 <Image src="/_MG_3798.webp" alt="Pilot" fill className="object-cover" sizes="(min-width: 768px) 25vw, 50vw" />
+=======
+                <Image src="/_MG_3870.webp" alt="Student trying medical equipment" fill className="object-cover" />
+              </div>
+              <div className="aspect-square relative rounded-2xl overflow-hidden">
+                <Image src="/_MG_3888.webp" alt="Engineering demonstration" fill className="object-cover" />
+              </div>
+              <div className="aspect-square relative rounded-2xl overflow-hidden">
+                <Image src="/_MG_3898.webp" alt="Laywer" fill className="object-cover" />
+              </div>
+              <div className="aspect-square relative rounded-2xl overflow-hidden">
+                <Image src="/_MG_3798.webp" alt="Pilot" fill className="object-cover" />
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
               </div>
             </div>
           </div>
@@ -250,7 +263,10 @@ export default function CareerDayPage() {
                   alt="Parent volunteer at Career Day"
                   fill
                   className="object-cover"
+<<<<<<< HEAD
                   sizes="(min-width: 1024px) 50vw, 100vw"
+=======
+>>>>>>> 6efb1e8ec8809213bf4ceaf8f20474d7acc6029e
                 />
               </div>
             </div>
