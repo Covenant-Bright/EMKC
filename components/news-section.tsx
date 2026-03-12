@@ -4,6 +4,7 @@ import Image from "next/image"
 import SectionDivider from "./section-divider"
 import { useState, useEffect } from "react"
 import { X } from "lucide-react"
+import { createPortal } from "react-dom"
 
 const newsItems = [
   {
@@ -34,17 +35,62 @@ const newsItems = [
 
 export default function NewsSection() {
   const [selectedNews, setSelectedNews] = useState<typeof newsItems[0] | null>(null)
-  
-  // Prevent background scrolling when modal is open
+  const [isMounted, setIsMounted] = useState(false)
+
   useEffect(() => {
-    if (selectedNews) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
+    setIsMounted(true)
+  }, [])
+
+  // Lock the page in place while the modal is open.
+  useEffect(() => {
+    if (!selectedNews) {
+      return
     }
+
+    const scrollY = window.scrollY
+    const { body, documentElement } = document
+    const originalHtmlOverflow = documentElement.style.overflow
+    const originalBodyOverflow = body.style.overflow
+    const originalBodyPosition = body.style.position
+    const originalBodyTop = body.style.top
+    const originalBodyWidth = body.style.width
+    const originalBodyPaddingRight = body.style.paddingRight
+    const scrollbarOffset = window.innerWidth - documentElement.clientWidth
+
+    documentElement.style.overflow = "hidden"
+    body.style.overflow = "hidden"
+    body.style.position = "fixed"
+    body.style.top = `-${scrollY}px`
+    body.style.width = "100%"
+
+    if (scrollbarOffset > 0) {
+      body.style.paddingRight = `${scrollbarOffset}px`
+    }
+
     return () => {
-      document.body.style.overflow = 'unset'
+      documentElement.style.overflow = originalHtmlOverflow
+      body.style.overflow = originalBodyOverflow
+      body.style.position = originalBodyPosition
+      body.style.top = originalBodyTop
+      body.style.width = originalBodyWidth
+      body.style.paddingRight = originalBodyPaddingRight
+      window.scrollTo(0, scrollY)
     }
+  }, [selectedNews])
+
+  useEffect(() => {
+    if (!selectedNews) {
+      return
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelectedNews(null)
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
   }, [selectedNews])
 
   return (
@@ -87,64 +133,78 @@ export default function NewsSection() {
       <SectionDivider position="bottom" fillColor="white" className="z-20" />
 
       {/* News Modal/Popup */}
-      {selectedNews && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+      {isMounted && selectedNews && createPortal(
+        <div
+          className="fixed inset-0 z-[100] overflow-y-auto bg-black/50 backdrop-blur-xl"
           onClick={() => setSelectedNews(null)}
         >
-          <div 
-            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header */}
-            <div className="sticky top-0 z-10 bg-white flex justify-between items-center p-4 border-b">
-              <span 
-                className={`${selectedNews.tagColor} text-white text-sm font-bold py-1 px-3 rounded-full`}
-              >
-                {selectedNews.tag}
-              </span>
-              <button 
-                onClick={() => setSelectedNews(null)}
-                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-                aria-label="Close"
-              >
-                <X className="text-gray-500 w-6 h-6" />
-              </button>
-            </div>
-            
-            {/* Modal Content */}
-            <div className="p-6">
-              {selectedNews.image && (
-                <div className="relative h-72 rounded-xl overflow-hidden mb-6">
-                  <Image
-                    src={selectedNews.image}
-                    alt={selectedNews.title}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 896px, 100vw"
-                  />
+          <div className="flex min-h-[100dvh] items-center justify-center p-4 sm:p-6">
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={`news-dialog-title-${selectedNews.id}`}
+              className="my-6 flex w-full max-w-4xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex max-h-[calc(100dvh-2rem)] flex-col sm:max-h-[calc(100dvh-3rem)]">
+                {/* Modal Header */}
+                <div className="sticky top-0 z-10 flex items-center justify-between border-b bg-white p-4">
+                  <span
+                    className={`${selectedNews.tagColor} rounded-full px-3 py-1 text-sm font-bold text-white`}
+                  >
+                    {selectedNews.tag}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedNews(null)}
+                    className="rounded-full p-2 transition-colors hover:bg-gray-100"
+                    aria-label="Close article"
+                  >
+                    <X className="h-6 w-6 text-gray-500" />
+                  </button>
                 </div>
-              )}
-              
-              <h3 className="text-2xl font-bold text-[#1e6a85] mb-4">
-                {selectedNews.title}
-              </h3>
-              
-              <div className="prose prose-lg text-gray-700">
-                <p>{selectedNews.content}</p>
-              </div>
-              
-              <div className="mt-8 text-center">
-                <button
-                  onClick={() => setSelectedNews(null)}
-                  className="bg-[#1e6a85] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#15536b] transition-colors"
-                >
-                  Close Article
-                </button>
+
+                {/* Modal Content */}
+                <div className="min-h-0 overflow-y-auto overscroll-contain">
+                  <div className="p-5 sm:p-6">
+                    {selectedNews.image && (
+                      <div className="mb-6 overflow-hidden rounded-xl bg-slate-100">
+                        <Image
+                          src={selectedNews.image}
+                          alt={selectedNews.title}
+                          width={1200}
+                          height={675}
+                          priority
+                          className="h-auto w-full object-cover"
+                          sizes="(min-width: 1024px) 896px, (min-width: 768px) 80vw, 92vw"
+                        />
+                      </div>
+                    )}
+
+                    <h3 id={`news-dialog-title-${selectedNews.id}`} className="mb-4 text-2xl font-bold text-[#1e6a85]">
+                      {selectedNews.title}
+                    </h3>
+
+                    <div className="prose prose-lg max-w-none text-gray-700">
+                      <p>{selectedNews.content}</p>
+                    </div>
+
+                    <div className="mt-8 text-center">
+                      <button
+                        type="button"
+                        onClick={() => setSelectedNews(null)}
+                        className="rounded-lg bg-[#1e6a85] px-6 py-3 font-medium text-white transition-colors hover:bg-[#15536b]"
+                      >
+                        Close Article
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   )
@@ -158,9 +218,10 @@ function NewsCard({
   onClick: () => void
 }) {
   return (
-    <div 
+    <button
+      type="button"
       onClick={onClick}
-      className="group cursor-pointer rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
+      className="group w-full cursor-pointer appearance-none overflow-hidden rounded-2xl border-0 bg-white p-0 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
     >
       {/* Conditional image or tag banner */}
       {item.image ? (
@@ -170,19 +231,19 @@ function NewsCard({
             alt={item.title}
             width={400}
             height={300}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(min-width: 768px) 33vw, 100vw"
           />
           <span
-            className={`absolute top-4 left-4 ${item.tagColor} text-white text-xs font-bold py-1 px-3 rounded-full`}
+            className={`absolute left-4 top-4 ${item.tagColor} rounded-full px-3 py-1 text-xs font-bold text-white`}
           >
             {item.tag}
           </span>
         </div>
       ) : (
-        <div className="relative h-20 bg-gray-100 flex items-center px-5">
+        <div className="relative flex h-20 items-center bg-gray-100 px-5">
           <span
-            className={`${item.tagColor} text-white text-xs font-bold py-1 px-3 rounded-full`}
+            className={`${item.tagColor} rounded-full px-3 py-1 text-xs font-bold text-white`}
           >
             {item.tag}
           </span>
@@ -191,21 +252,21 @@ function NewsCard({
 
       {/* Title */}
       <div className="p-5">
-        <h3 className="text-lg font-semibold text-[#1e6a85] group-hover:text-sky-600 transition-colors">
+        <h3 className="text-lg font-semibold text-[#1e6a85] transition-colors group-hover:text-sky-600">
           {item.title}
         </h3>
-        <div className="mt-2 flex items-center text-sky-600 text-sm font-medium">
+        <div className="mt-2 flex items-center text-sm font-medium text-sky-600">
           Read more
-          <svg 
-            className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" 
-            fill="none" 
-            stroke="currentColor" 
+          <svg
+            className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+            fill="none"
+            stroke="currentColor"
             viewBox="0 0 24 24"
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
           </svg>
         </div>
       </div>
-    </div>
+    </button>
   )
 }
