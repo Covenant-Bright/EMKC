@@ -6,6 +6,16 @@ import ParticlesBackground from "@/components/particles-background";
 import Image from "next/image";
 import SectionDivider from "@/components/section-divider";
 import { Calendar, MapPin, Clock, GraduationCap, Award, Users } from "lucide-react";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Graduation Ceremony",
+  description:
+    "Celebrate EMKC graduation milestones, ceremony highlights, and memorable moments for graduating students and families.",
+  path: "/events/special-events",
+  image: "/events/_MG_1986.webp",
+  keywords: ["graduation ceremony", "school graduation", "student celebration"],
+});
 
 export default function GraduationPage() {
   return (
@@ -17,7 +27,7 @@ export default function GraduationPage() {
         title="Graduation Ceremony"
         subtitle="Honoring achievements and celebrating new beginnings"
         backgroundImage="/events/_MG_1986.webp"
-        overlayColor="rgba(13, 59, 73, 0.7)"
+        overlayOpacity="bg-[#0d3b49]/70"
       />
 
       <ContentSection bgColor="bg-white">
@@ -33,14 +43,14 @@ export default function GraduationPage() {
               />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-[#d4af37] text-white px-6 py-3 rounded-lg font-bold text-lg shadow-lg">
-              Class of 2025
+              Graduating Class
             </div>
           </div>
           
           <div>
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#0d3b49]/10 text-[#0d3b49] text-sm font-medium mb-6">
               <Calendar className="h-4 w-4 mr-2" />
-              June 25, 2025
+              Date announced each graduation cycle
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-[#0d3b49] mb-6">A Celebration of Excellence</h2>

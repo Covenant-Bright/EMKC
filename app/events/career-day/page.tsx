@@ -7,6 +7,16 @@ import Image from "next/image"
 import SectionDivider from "@/components/section-divider"
 import Link from "next/link"
 import { Calendar, MapPin, Clock, Briefcase, GraduationCap, Users, Star, Heart } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Career Day",
+  description:
+    "Learn about EMKC Career Day, where students explore professions through speakers, workshops, and hands-on discovery.",
+  path: "/events/career-day",
+  image: "/_MG_4049.webp",
+  keywords: ["career day", "student career exploration", "school workshop"],
+})
 
 export default function CareerDayPage() {
   return (
@@ -25,7 +35,7 @@ export default function CareerDayPage() {
           <div>
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-100 text-teal-600 text-sm font-medium mb-6">
               <Calendar className="h-4 w-4 mr-2" />
-              March, 2025
+              Date announced each session
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-[#0d3b49] mb-6">Discover Your Future</h2>

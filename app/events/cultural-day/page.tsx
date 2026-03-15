@@ -5,6 +5,16 @@ import ParticlesBackground from "@/components/particles-background"
 import Image from "next/image"
 import SectionDivider from "@/components/section-divider"
 import { Calendar, MapPin, Clock } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Cultural Day",
+  description:
+    "See how EMKC Cultural Day celebrates heritage, diversity, performances, and community learning across the school.",
+  path: "/events/cultural-day",
+  image: "/cultural/_MG_0406.webp",
+  keywords: ["cultural day", "school cultural event", "diversity celebration"],
+})
 
 export default function CulturalDayPage() {
   return (
@@ -23,7 +33,7 @@ export default function CulturalDayPage() {
           <div>
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-600 text-sm font-medium mb-6">
               <Calendar className="h-4 w-4 mr-2" />
-              March, 2025
+              Date announced each session
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-[#0d3b49] mb-6">A Global Celebration</h2>

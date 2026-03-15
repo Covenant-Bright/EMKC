@@ -3,6 +3,16 @@ import PageHeader from "@/components/page-header"
 import ContentSection from "@/components/content-section"
 import ParticlesBackground from "@/components/particles-background"
 import Link from "next/link"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Frequently Asked Questions",
+  description:
+    "Find answers to common questions about admissions, academics, facilities, and school life at Excellent Miracle Kiddies College.",
+  path: "/faqs",
+  image: "/_DSC5463.webp",
+  keywords: ["school FAQ", "admissions questions", "EMKC help"],
+})
 
 export default function FAQPage() {
   return (

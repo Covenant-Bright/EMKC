@@ -6,6 +6,16 @@ import Image from "next/image"
 import Link from "next/link"
 import SectionDivider from "@/components/section-divider"
 import { BookOpen, Award, Users, Clock } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Academics",
+  description:
+    "Explore EMKC academic programmes across preparatory, nursery, primary, and secondary levels in Ibadan.",
+  path: "/academics",
+  image: "/_MG_3909.webp",
+  keywords: ["school academics", "education programmes in Ibadan", "EMKC academics"],
+})
 
 const academicPrograms = [
   {

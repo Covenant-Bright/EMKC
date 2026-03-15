@@ -7,6 +7,16 @@ import Image from "next/image"
 import SectionDivider from "@/components/section-divider"
 import Link from "next/link"
 import { Lightbulb, GraduationCap, Globe, BookOpen, Medal, Users, Brain, Target } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Secondary Education",
+  description:
+    "Explore EMKC's secondary education programme designed to prepare students for strong academic and personal success.",
+  path: "/academics/secondary",
+  image: "/_MG_4921.webp",
+  keywords: ["secondary school in Ibadan", "college education", "secondary programme"],
+})
 
 export default function SecondaryPage() {
   return (

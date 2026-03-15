@@ -40,11 +40,11 @@ export function LoaderScreen({ message = "Loading your experience...", reducedMo
 
       <div className="relative text-center">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.45em] text-slate-400">Excellent Miracle</p>
-        <h1
+        <div
           className={`bg-gradient-to-r from-indigo-600 via-fuchsia-500 to-pink-500 bg-clip-text text-7xl font-extrabold tracking-[0.08em] text-transparent md:text-8xl ${wordmarkClass}`}
         >
           EMKC
-        </h1>
+        </div>
       </div>
 
       <div className="mt-10 w-72 max-w-[82vw]">

@@ -8,6 +8,16 @@ import SectionDivider from "@/components/section-divider"
 import Link from "next/link"
 import { Heart, Lightbulb, Users, Globe, Sparkles, Star } from "lucide-react"
 import { Suspense } from "react" // Import Suspense
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Our Core Values",
+  description:
+    "See the core values that guide student life, character formation, and learning at Excellent Miracle Kiddies College.",
+  path: "/about/core-values",
+  image: "/_MG_4049.webp",
+  keywords: ["school values", "character education", "EMKC values"],
+})
 
 export default function CoreValuesPage() {
   return (

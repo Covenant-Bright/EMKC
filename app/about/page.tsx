@@ -5,6 +5,16 @@ import ParticlesBackground from "@/components/particles-background"
 import Image from "next/image"
 import Link from "next/link"
 import SectionDivider from "@/components/section-divider"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "About EMKC",
+  description:
+    "Learn about Excellent Miracle Kiddies College, our story, school values, facilities, and the mission guiding our learning community in Ibadan.",
+  path: "/about",
+  image: "/_MG_1987.webp",
+  keywords: ["about EMKC", "school story", "private school values"],
+})
 
 const aboutCards = [
   {

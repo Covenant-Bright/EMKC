@@ -18,7 +18,7 @@ const eventCategories = [
     events: [
       {
         title: "Yoruba Cultural Display",
-        date: "March, 2025",
+        date: "Date announced each session",
         location: "All Branches",
         participants: "All Students",
         image: "/events/_MG_0038.webp",
@@ -26,7 +26,7 @@ const eventCategories = [
       },
       {
         title: "Hausa Cultural Display",
-        date: "March, 2025",
+        date: "Date announced each session",
         location: "All Branches",
         participants: "All Students",
         image: "/events/IMG_20220401_130646.webp",
@@ -34,7 +34,7 @@ const eventCategories = [
       },
       {
         title: "Igbo Cultural Display",
-        date: "March, 2025",
+        date: "Date announced each session",
         location: "All Branches",
         participants: "All Students",
         image: "/events/_MG_0009.webp",
@@ -51,7 +51,7 @@ const eventCategories = [
     events: [
       {
         title: "Pink Color",
-        date: "March, 2025",
+        date: "Date announced each session",
         location: "All Branches",
         participants: "All Students",
         image: "/events/_MG_0324.webp",
@@ -59,7 +59,7 @@ const eventCategories = [
       },
       {
         title: "Purple Color",
-        date: "March, 2025",
+        date: "Date announced each session",
         location: "All Branches",
         participants: "All Students",
         image: "/events/_MG_0223.webp",
@@ -67,7 +67,7 @@ const eventCategories = [
       },
       {
         title: "Red Color",
-        date: "March, 2025",
+        date: "Date announced each session",
         location: "All Branches",
         participants: "All Students",
         image: "/events/_MG_0187.webp",
@@ -84,15 +84,15 @@ const eventCategories = [
     events: [
       {
         title: "Primary 5 Graduation",
-        date: "August 5, 2025",
+        date: "Date announced each graduation cycle",
         location: "School Auditorium",
         participants: "Graduands and Families",
         image: "/events/_MG_1997.webp",
         description: "A joyful ceremony celebrating our Primary 5 students as they complete primary education and step into the exciting world of secondary school."
       },
       {
-        title: "Class of 2025 Graduation Ceremony",
-        date: "August 5, 2025",
+        title: "Graduation Ceremony",
+        date: "Date announced each graduation cycle",
         location: "School Auditorium",
         participants: "Graduands and Families",
         image: "/events/_MG_1992.webp",

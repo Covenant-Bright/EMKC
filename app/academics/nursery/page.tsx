@@ -7,6 +7,16 @@ import Image from "next/image"
 import SectionDivider from "@/components/section-divider"
 import { Clock, Users, BookOpen, Star, Music } from "lucide-react"
 import Link from "next/link"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Nursery",
+  description:
+    "Learn about EMKC's nursery programme, where children build confidence, curiosity, and early academic foundations.",
+  path: "/academics/nursery",
+  image: "/_MG_4328.webp",
+  keywords: ["nursery school in Ibadan", "early childhood education", "nursery programme"],
+})
 
 export default function NurseryPage() {
   return (

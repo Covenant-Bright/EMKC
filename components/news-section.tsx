@@ -12,16 +12,16 @@ const newsItems = [
     image: "/_MG_4304.webp",
     tag: "ANNOUNCEMENT",
     tagColor: "bg-green-600",
-    title: "School Resumes – September 15th, 2025",
-    content: `We look forward to welcoming all our Preparatory, Nursery, Primary, and Secondary students back to school on Monday, September 15th, 2025. The new academic year will bring exciting programs, enriched learning experiences, and opportunities for personal growth. Parents are encouraged to buy necessary materials for their wards in preparation for the upcoming session.`
+    title: "School Resumption Date Coming Soon",
+    content: `We look forward to welcoming all our Preparatory, Nursery, Primary, and Secondary students back to school for the next session. Fresh academic plans, enriched learning experiences, and important resumption details will be shared with parents before classes begin.`
   },
   {
     id: 2,
     image: "/_MG_4320.webp",
     tag: "ACADEMICS",
     tagColor: "bg-blue-600",
-    title: "Summer Coaching Program – Starts August 11th, 2025",
-    content: `Our annual Summer Coaching Program begins on Monday, August 11th, 2025. Designed for pupils and students in Primary and Secondary classes, the program offers intensive lessons in core subjects, interactive group learning, and skill-building activities. Registration is now open—secure your spot early to prepare for the upcoming term.`
+    title: "Summer Coaching Programme Updates",
+    content: `Our annual Summer Coaching Programme returns with intensive support in core subjects, interactive group learning, and skill-building activities for pupils and students. Registration details and confirmed dates will be shared before the programme begins.`
   },
   {
     id: 3,

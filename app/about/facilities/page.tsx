@@ -7,6 +7,16 @@ import Image from "next/image"
 import SectionDivider from "@/components/section-divider"
 import Link from "next/link"
 import { BookOpen, Palette, Activity, Cpu, Trees, Utensils, Users, Shield } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Our Facilities",
+  description:
+    "Explore EMKC classrooms, technology spaces, play areas, and campus facilities designed for safe and engaging learning.",
+  path: "/about/facilities",
+  image: "/_MG_3490.webp",
+  keywords: ["school facilities", "classrooms in Ibadan", "EMKC campus"],
+})
 
 export default function FacilitiesPage() {
   return (

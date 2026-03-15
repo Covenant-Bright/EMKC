@@ -98,8 +98,8 @@ export default function GlobalLoader() {
 
   React.useEffect(() => {
     let cancelled = false
-    const minDuration = firstLoadRef.current ? (isReduced ? 180 : 700) : isReduced ? 120 : 420
-    const maxWait = firstLoadRef.current ? 2600 : 1800
+    const minDuration = firstLoadRef.current ? (isReduced ? 90 : 180) : 0
+    const maxWait = firstLoadRef.current ? (isReduced ? 220 : 600) : 120
 
     setShow(true)
 

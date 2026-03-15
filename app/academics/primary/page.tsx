@@ -7,6 +7,16 @@ import Image from "next/image"
 import SectionDivider from "@/components/section-divider"
 import Link from "next/link"
 import { Globe, BookOpen, Calculator, Beaker, Palette, Trophy, Users } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Primary Education",
+  description:
+    "See how EMKC's primary education programme builds strong academic foundations, confidence, and curiosity in learners.",
+  path: "/academics/primary",
+  image: "/_MG_4007.webp",
+  keywords: ["primary school in Ibadan", "primary education", "academic foundations"],
+})
 
 export default function PrimaryPage() {
   return (

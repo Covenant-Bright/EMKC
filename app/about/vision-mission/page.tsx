@@ -7,6 +7,16 @@ import Image from "next/image"
 import SectionDivider from "@/components/section-divider"
 import Link from "next/link"
 import { Target, Eye, Heart, Star, Users, Globe } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Vision & Mission",
+  description:
+    "Explore the vision, mission, and educational philosophy that shape Excellent Miracle Kiddies College.",
+  path: "/about/vision-mission",
+  image: "/_MG_4300.webp",
+  keywords: ["school vision", "school mission", "educational philosophy"],
+})
 
 export default function VisionMissionPage() {
   return (

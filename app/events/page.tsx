@@ -6,11 +6,21 @@ import Image from "next/image"
 import Link from "next/link"
 import SectionDivider from "@/components/section-divider"
 import { Calendar, MapPin, Clock } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Events & News",
+  description:
+    "Explore EMKC school events, celebrations, upcoming activities, and community news from across our campuses.",
+  path: "/events",
+  image: "/_DSC5247.webp",
+  keywords: ["school events", "school news", "EMKC activities"],
+})
 
 const featuredEvents = [
   {
     title: "Cultural Day",
-    date: "June 15, 2025",
+    date: "Date announced each session",
     location: "All Branches",
     time: "10:00 AM - 3:00 PM",
     description: "Celebrate diversity with performances, food, and activities from around the world.",
@@ -20,7 +30,7 @@ const featuredEvents = [
   },
   {
     title: "Color Day",
-    date: "July 10, 2025",
+    date: "Date announced each session",
     location: "All Branches",
     time: "9:00 AM - 1:00 PM",
     description: "A vibrant celebration of colors with art, games, and creative activities.",
@@ -30,7 +40,7 @@ const featuredEvents = [
   },
   {
     title: "Career Day",
-    date: "August 5, 2025",
+    date: "Date announced each session",
     location: "All Branches",
     time: "10:00 AM - 2:00 PM",
     description: "Children learn about different professions through interactive presentations.",
@@ -38,9 +48,9 @@ const featuredEvents = [
     link: "/events/career-day",
     color: "bg-teal-500",
   },
-   {
+  {
     title: "Special Events",
-    date: "August 5, 2025",
+    date: "Date announced each celebration cycle",
     location: "All Branches",
     time: "10:00 AM - 2:00 PM",
     description: "A celebration of the successful completion of another academic session.",
@@ -53,19 +63,19 @@ const featuredEvents = [
 const upcomingEvents = [
   {
     title: "School Resumption",
-    date: "September 15, 2025",
+    date: "Date shared before resumption",
     location: "All Branches",
     description: "All students are to resume on the resumption date and purchase the needed books and materials for the coming session.",
   },
   {
     title: "Summer Coaching",
-    date: "August 11, 2025",
+    date: "Date to be announced",
     location: "School Premises",
     description: "Register early for our popular summer coaching.",
   },
   {
     title: "Parent Teachers Meeting",
-    date: "September, 2025",
+    date: "Scheduled each term",
     location: "Each School Branch",
     description: "To enlighten parents about the school's transition to a digital portal for convenient and secure school fee payments.",
   },

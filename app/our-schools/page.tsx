@@ -5,6 +5,16 @@ import ParticlesBackground from "@/components/particles-background"
 import Image from "next/image"
 import SectionDivider from "@/components/section-divider"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Our Schools",
+  description:
+    "Explore EMKC school branches, campus locations, facilities, and contact details across Ibadan.",
+  path: "/our-schools",
+  image: "/_MG_3973.webp",
+  keywords: ["school branches", "school locations in Ibadan", "EMKC campuses"],
+})
 
 const schoolLocations = [
   {

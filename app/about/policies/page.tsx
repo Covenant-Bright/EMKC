@@ -7,6 +7,16 @@ import Image from "next/image";
 import SectionDivider from "@/components/section-divider";
 import Link from "next/link";
 import { Shield, Clock, FileText, MessageCircle, PieChart, Award, Users } from "lucide-react";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "School Policies",
+  description:
+    "Review school policies covering health, attendance, conduct, communication, and enrollment at Excellent Miracle Kiddies College.",
+  path: "/about/policies",
+  image: "/_DSC5428.webp",
+  keywords: ["school policies", "attendance policy", "health and safety policy"],
+});
 
 const PolicyCard = ({
   icon,

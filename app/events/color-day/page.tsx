@@ -5,6 +5,16 @@ import ParticlesBackground from "@/components/particles-background"
 import Image from "next/image"
 import SectionDivider from "@/components/section-divider"
 import { Calendar, MapPin, Clock } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Color Day",
+  description:
+    "Discover EMKC Color Day, a vibrant school celebration filled with art, colour-themed activities, and creative learning.",
+  path: "/events/color-day",
+  image: "/color/_MG_0236.webp",
+  keywords: ["color day", "creative school event", "EMKC celebration"],
+})
 
 export default function ColorDayPage() {
   return (
@@ -23,7 +33,7 @@ export default function ColorDayPage() {
           <div>
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-pink-100 text-pink-600 text-sm font-medium mb-6">
               <Calendar className="h-4 w-4 mr-2" />
-              March, 2025
+              Date announced each session
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-[#0d3b49] mb-6">Celebrate with All Colors</h2>

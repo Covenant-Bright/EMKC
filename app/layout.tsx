@@ -10,8 +10,7 @@ import { Suspense } from "react"
 import GlobalLoader from "@/components/global-loader"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-
-const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://emkc.sch.ng")
+import { siteUrl } from "@/lib/seo"
 
 // Initialize the Fredoka font with the weights we need
 const fredoka = Fredoka({
@@ -42,9 +41,6 @@ export const metadata: Metadata = {
     "preparatory school in Ibadan",
     "education in Ibadan",
   ],
-  alternates: {
-    canonical: "/",
-  },
   authors: [{ name: "Excellent Miracle Kiddies College", url: siteUrl }],
   creator: "Excellent Miracle Kiddies College",
   publisher: "Excellent Miracle Kiddies College",

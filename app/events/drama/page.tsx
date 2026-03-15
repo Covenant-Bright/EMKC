@@ -1,6 +1,16 @@
 import Header from "@/components/header"
 import ParticlesBackground from "@/components/particles-background"
 import ContentSection from "@/components/content-section"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Drama & Performances",
+  description:
+    "Watch highlights from EMKC drama performances and student storytelling productions.",
+  path: "/events/drama",
+  image: "/events/_MG_0324.webp",
+  keywords: ["school drama", "student performances", "EMKC drama"],
+})
 
 export default function DramaPage() {
   return (

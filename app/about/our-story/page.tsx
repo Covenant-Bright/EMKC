@@ -4,6 +4,16 @@ import ContentSection from "@/components/content-section";
 import ParticlesBackground from "@/components/particles-background";
 import Image from "next/image";
 import SectionDivider from "@/components/section-divider";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Our Story",
+  description:
+    "Read the story behind Excellent Miracle Kiddies College and how EMKC grew into a trusted learning community in Ibadan.",
+  path: "/about/our-story",
+  image: "/_MG_4302.webp",
+  keywords: ["EMKC history", "school story in Ibadan"],
+});
 
 export default function OurStoryPage() {
   return (

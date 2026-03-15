@@ -6,6 +6,16 @@ import ParticlesBackground from "@/components/particles-background"
 import Image from "next/image"
 import SectionDivider from "@/components/section-divider"
 import { Clock, Users, Award, BookOpen, Palette } from "lucide-react"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata = buildMetadata({
+  title: "Preparatory",
+  description:
+    "Discover EMKC's preparatory programme for early learners, focused on routines, play, and foundational school readiness.",
+  path: "/academics/preparatory",
+  image: "/_MG_3966.webp",
+  keywords: ["preparatory school in Ibadan", "early learning", "school readiness"],
+})
 
 export default function PreparatoryPage() {
   return (
